@@ -25,7 +25,7 @@ class PlayerErrorEvent extends Event {
                 void message.reply("❌ | Music player is starting, please wait!");
                 break;
             default:
-                void message.reply("❌ | Something went wrong! Error: ${error}");
+                void message.reply(`❌ | Something went wrong! Error: ${error}`);
         };
     }
 
