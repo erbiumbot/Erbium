@@ -19,7 +19,7 @@ class Resume extends Command {
 
         const queue = this.client.player.getQueue(message);
         if (!queue) return message.reply("❌ | I am not playing anything?");
-        if (!queue.paused) return message.reply("❌ | Pause the song to resume");
+        if (!queue.paused) return message.reply("❌ | The music player is not paused!");
 
         queue.player.resume(message);
         queue.player.pause(message);
