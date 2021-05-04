@@ -18,8 +18,8 @@ class Pause extends Command {
         if (message.guild.me.voice.channel && message.guild.me.voice.channelID !== message.member.voice.channelID) return message.reply("❌ | You are not in my voice channel!");
 
         const queue = this.client.player.getQueue(message);
-        if (!queue || queue.paused) return message.reply("❌ | I am not playing anything?");
-
+        if (!queue) return message.reply("❌ | I am not playing anything?");
+        if (queue.paused) return message.reply("❌ | The music player is already paused!")
         queue.player.pause(message);
 
         message.reply("⏸ | Paused!");
