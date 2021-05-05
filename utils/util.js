@@ -1,6 +1,4 @@
 const { GuildMember } = require("discord.js");
-const moment = require("moment");
-require("moment-duration-format")(moment);
 
 class Util {
 
@@ -8,8 +6,13 @@ class Util {
         return str.replace(/([^\W_]+[^\s-]*) */g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
     }
 
-    static formatDuration(dur) {
-        return moment.duration(dur).format(" M [Month(s)], D [Day(s)], H [Hour(s)], m [Minute(s)], s [Second(s)]");
+    static formatDuration(ms, number) {
+        return  if (isNaN(ms)) throw new Error("Value is not a number");
+ return require('pretty-ms')(ms, {
+ verbose: true,
+ compact: false,
+ secondsDecimalDigits: 0
+ });
     }
 
     static cleanText(text, token = process.env.DISCORD_TOKEN) {
