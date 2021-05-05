@@ -8,7 +8,7 @@ class NowPlaying extends Command {
 
         this.config({
             name: "nowplaying",
-            aliases: ["np"],
+            aliases: ["np", "now-playing"],
             description: "Shows currently playing song",
             permissions: []
         });
